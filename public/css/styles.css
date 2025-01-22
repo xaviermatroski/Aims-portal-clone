@@ -1,0 +1,319 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.header-left h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Container (Create Course Page) */
+.form-container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dashboard Container (Professor Page) */
+/* Courses section */
+.courses-section {
+    padding: 70px 20px 60px; /* Adjust spacing for header and footer */
+    margin: 0; /* Remove default margin */
+    width: 100%;
+    min-height: calc(100vh - 130px); /* Fill vertical space between header and footer */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Courses Container */
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start; /* Align to top-left */
+    width: 100%;
+}
+
+/* Course Tiles */
+.course-tile {
+    flex: 1 1 calc(33.33% - 40px); /* Fit 3 tiles per row, adjust for gaps */
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    min-width: 250px; /* Minimum width for responsive scaling */
+    max-width: 400px;
+}
+
+.course-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* No Courses Message */
+.no-courses {
+    text-align: center;
+    color: #999999;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.course-tile p {
+    margin: 5px 0;
+    color: #333333;
+}
+
+.course-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 4px 4px 0 0; /* Rounded corners for the top section */
+    margin-bottom: 10px;
+}
+
+.course-title h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* courses.ejs */
+/* Enroll Button Styles */
+.enroll-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white; /* Default blue color */
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.enroll-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Logout button in the navbar */
+.logout-button {
+    background-color: transparent; /* Transparent background for the navbar */
+    color: #ffffff; /* White emoji for visibility in the blue navbar */
+    border: none; /* No border */
+    font-size: 20px; /* Larger font size for the emoji */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 6px; /* Padding for click area */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.logout-button:hover {
+    color: #FF0000; /* Red color on hover */
+}
+
+/* login and verify-otp */
+/* Auth Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Auth Card */
+.auth-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Auth Title */
+.auth-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Auth Description */
+.auth-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Auth Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 20px;
+    }
+
+    .auth-title {
+        font-size: 20px;
+    }
+
+    .btn-primary {
+        padding: 10px;
+    }
+}
+
+
+

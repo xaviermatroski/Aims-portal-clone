@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h2><%= professor_name %></h2>
+        </div>
+        <nav class="header-right">
+            <a href="/professor/<%= professor_name %>">Home</a>
+            <a href="/professor/<%= professor_name %>/create">Create Course</a>
+            <a href="/professor/<%= professor_name %>/req_course_prof">Requests</a>
+            
+            <!-- Logout Form -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">⏻</button>
+            </form>
+        </nav>
+    </header>
+
+    <!-- Courses Section -->
+    <main class="courses-section">
+        <% if (requests.length === 0) { %>
+            <p class="no-courses">No requests yet.</p>
+        <% } else { %>
+            <div class="courses-container">
+                <% requests.forEach(function(request) { %>
+                    <div class="course-tile">
+                        <div class="course-title">
+                            <h2><%= request.courseCode %></h2>
+                        </div>
+                        <p><strong>Student Name:</strong> <%= request.studentName %></p>
+                        <p><strong>Student email:</strong> <%= request.studentEmail %></p>
+                        <!-- Enroll Button -->
+                        <form action="/professor/<%= professor_name %>/accept_request" method="post" class="enroll-form">
+                            <input type="hidden" name="courseCode" value="<%= request.courseCode %>">
+                            <input type="hidden" name="student_name" value="<%= request.studentName %>">
+                            <input type="hidden" name="student_mail" value="<%= request.studentEmail %>">
+                            <button type="submit" class="btn enroll-btn">Accept</button>
+                        </form>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 University Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

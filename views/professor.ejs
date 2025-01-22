@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h2><%= professor_name %></h2>
+        </div>
+        <nav class="header-right">
+            <a href="/professor/<%= professor_name %>">Home</a>
+            <a href="/professor/<%= professor_name %>/create">Create Course</a>
+            <a href="/professor/<%= professor_name %>/req_course_prof">Requests</a>
+            
+            <!-- Logout Form -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">⏻</button>
+            </form>
+        </nav>
+    </header>
+
+    <!-- Courses Section -->
+    <main class="courses-section">
+        <% if (courses.length === 0) { %>
+            <p class="no-courses">No courses offered yet.</p>
+        <% } else { %>
+            <div class="courses-container">
+                <% courses.forEach(function(course) { %>
+                    <div class="course-tile">
+                        <div class="course-title">
+                            <h2><%= course.courseName %></h2>
+                        </div>
+                        <p><strong>Department:</strong> <%= course.department %></p>
+                        <p><strong>Code:</strong> <%= course.courseCode %></p>
+                        <p><strong>Description:</strong> <%= course.description %></p>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 University Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
