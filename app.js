@@ -68,7 +68,7 @@ app.use(
 // const professors = [
 //     {
 //         professor_name: "abc",
-//         professor_mail: "rishimahiya@gmail.com",
+//         professor_mail: "abc@gmail.com",
 //         courses_list: [],
 //     },
 //     {
@@ -81,7 +81,7 @@ app.use(
 // const students = [
 //     {
 //         student_name: "alex",
-//         student_mail: "2022csb1090@iitrpr.ac.in",
+//         student_mail: "alex@gmail.com",
 //         enrolled_courses: [],
 //     },
 //     {
