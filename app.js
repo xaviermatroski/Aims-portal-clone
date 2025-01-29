@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/portalDB")
+mongoose.connect("mongodb+srv://rehanc5100:okq3UjHGRpB1npW0@cluster0.5nymp.mongodb.net/PortalDB?retryWrites=true&w=majority&appName=Cluster0")
 
 // Course 
 const courseSchema = {
