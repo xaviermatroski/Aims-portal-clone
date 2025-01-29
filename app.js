@@ -473,7 +473,7 @@ app.get("/student/:student_name", isAuthenticated, isAuthorized("student"), func
             .then((student) => {
                 if (student) {
                     // Render the student's courses
-                    res.render("Student", {
+                    res.render("student", {
                         student_name: student_name,
                         courses: student.enrolled_courses,
                     });
