@@ -123,6 +123,10 @@ function isAuthorized(role) {
     };
 }
 
+app.get("/", (req, res) => {
+    res.redirect("/register");
+})
+
 // Register get 
 app.get("/register", (req, res) => {
     res.render("register");
