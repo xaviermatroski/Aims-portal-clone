@@ -123,6 +123,45 @@ function isAuthorized(role) {
     };
 }
 
+// Register get 
+app.get("/register", (req, res) => {
+    res.render("register");
+});
+
+// Register post
+app.post("/register", (req, res) => {
+    const { name, email, role } = req.body;
+
+    if (role === "professor") {
+        // Create Professor
+        const newProfessor = new Professor({
+            professor_name: name,
+            professor_mail: email,
+            courses_list: [],  
+            requests: []
+        });
+        newProfessor.save()
+            .then(() => res.redirect('/login')) // Redirect to login after success
+            .catch(err => res.status(400).send("Error registering professor: " + err));
+    } 
+    else if (role === "student") {
+        // Create Student
+        const newStudent = new Student({
+            student_name: name,
+            student_mail: email,
+            enrolled_courses: [],
+            requested_courses: []
+        });
+        newStudent.save()
+            .then(() => res.redirect('/login')) // Redirect to login after success
+            .catch(err => res.status(400).send("Error registering student: " + err));
+    } 
+    else {
+        res.status(400).send("Invalid role");
+    }
+});
+
+
 // Render login page
 app.get("/login", (req, res) => {
     res.render("login"); // Create a login.ejs with an email input field
